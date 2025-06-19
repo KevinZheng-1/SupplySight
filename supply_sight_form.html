@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SupplySight</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
       background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     h1 {
       text-align: center;
       color: #333;
     }
-    form {
-      max-width: 500px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    label, select, input {
+    label {
+      margin-top: 15px;
       display: block;
+      font-weight: bold;
+    }
+    select, input {
       width: 100%;
-      margin-bottom: 15px;
+      padding: 10px;
+      margin-top: 5px;
       font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
     button {
-      padding: 10px 15px;
+      margin-top: 20px;
+      padding: 12px;
       background-color: #007BFF;
       color: white;
       border: none;
+      font-size: 16px;
       border-radius: 5px;
+      width: 100%;
       cursor: pointer;
     }
     button:hover {
@@ -42,64 +53,67 @@
   </style>
 </head>
 <body>
-  <h1>SupplySight</h1>
-  <form id="inventoryForm">
-    <label for="client">Client Name:</label>
-    <select id="client" name="client" required>
-      <option value="">--Select Client--</option>
-      <option>Cafe_1</option>
-      <option>Cafe_2</option>
-      <option>Cafe_3</option>
-      <option>Cafe_4</option>
-      <option>Cafe_5</option>
-      <option>Cafe_6</option>
-      <option>Cafe_7</option>
-      <option>Cafe_8</option>
-      <option>Cafe_9</option>
-      <option>Cafe_10</option>
-    </select>
+  <div class="container">
+    <h1>SupplySight</h1>
+    <form id="supplyForm">
+      <label for="client">Client Name:</label>
+      <select id="client" name="client" required>
+        <option value="">-- Select Client --</option>
+        <option>Cafe_1</option>
+        <option>Cafe_2</option>
+        <option>Cafe_3</option>
+        <option>Cafe_4</option>
+        <option>Cafe_5</option>
+        <option>Cafe_6</option>
+        <option>Cafe_7</option>
+        <option>Cafe_8</option>
+        <option>Cafe_9</option>
+        <option>Cafe_10</option>
+      </select>
 
-    <label for="inventory">Check-In Inventory:</label>
-    <select id="inventory" name="inventory" required>
-      <option value="">--Select Inventory Item--</option>
-      <option>Coffee Beans</option>
-      <option>Water</option>
-      <option>Milk</option>
-      <option>Chocolate Sauce</option>
-      <option>Ice Cubes</option>
-      <option>Matcha Powder</option>
-      <option>Cocoa Powder</option>
-      <option>Chai Concentrate</option>
-      <option>Black Tea</option>
-      <option>Earl Grey</option>
-      <option>Green Tea</option>
-      <option>Herbal Blend</option>
-      <option>Vanilla Syrup</option>
-      <option>Caramel Syrup</option>
-      <option>Hazelnut Syrup</option>
-      <option>Oat Milk</option>
-      <option>Soy Milk</option>
-      <option>Almond Milk</option>
-      <option>Whipped Cream</option>
-    </select>
+      <label for="inventory">Check-in Inventory:</label>
+      <select id="inventory" name="inventory" required>
+        <option value="">-- Select Item --</option>
+        <option>Coffee Beans</option>
+        <option>Water</option>
+        <option>Milk</option>
+        <option>Chocolate Sauce</option>
+        <option>Ice Cubes</option>
+        <option>Matcha Powder</option>
+        <option>Cocoa Powder</option>
+        <option>Chai Concentrate</option>
+        <option>Black Tea</option>
+        <option>Earl Grey</option>
+        <option>Green Tea</option>
+        <option>Herbal Blend</option>
+        <option>Vanilla Syrup</option>
+        <option>Caramel Syrup</option>
+        <option>Hazelnut Syrup</option>
+        <option>Oat Milk</option>
+        <option>Soy Milk</option>
+        <option>Almond Milk</option>
+        <option>Whipped Cream</option>
+      </select>
 
-    <label for="volume">Check-In Volume:</label>
-    <input type="number" id="volume" name="volume" placeholder="Enter amount" required>
+      <label for="volume">Check-in Volume:</label>
+      <input type="number" id="volume" name="volume" placeholder="Enter number" required />
 
-    <label for="unit">Unit:</label>
-    <select id="unit" name="unit" required>
-      <option value="g">g</option>
-      <option value="ml">ml</option>
-    </select>
+      <label for="unit">Unit:</label>
+      <select id="unit" name="unit" required>
+        <option value="g">g</option>
+        <option value="ml">ml</option>
+      </select>
 
-    <button type="submit">Submit</button>
-  </form>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 
   <script>
-    document.getElementById('inventoryForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Data submitted successfully!');
+    document.getElementById('supplyForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('✅ Submission successful! (Note: Form data not saved yet)');
     });
   </script>
 </body>
 </html>
+
